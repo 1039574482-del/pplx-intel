@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
@@ -42,6 +42,7 @@
       border-radius: 18px;
       box-shadow: var(--shadow);
       border: 1px solid var(--border);
+      gap: 10px;
     }
     .logo-block {
       display: flex;
@@ -64,6 +65,12 @@
       text-transform: uppercase;
       letter-spacing: 0.16em;
     }
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+    }
     .date-chip {
       font-size: 12px;
       color: var(--text-sub);
@@ -71,6 +78,15 @@
       border-radius: 999px;
       border: 1px solid var(--border);
       background: #fafafa;
+    }
+    .update-btn {
+      font-size: 11px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+      background: #f4f7ff;
     }
     h2.section-title {
       font-size: 15px;
@@ -180,6 +196,11 @@
     @media (max-width: 600px) {
       header {
         padding: 12px 14px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-right {
+        align-items: flex-start;
       }
       .page {
         padding: 12px 12px 72px;
@@ -195,9 +216,15 @@
         <div class="logo-sub">PpLX爱的跑车情报局 · 兰州</div>
         <div class="logo-tag">driver console</div>
       </div>
-      <div class="date-chip">
-        <!-- 每天自己改日期即可 -->
-        今日：2025-11-21
+      <div class="header-right">
+        <div class="date-chip">
+          <!-- TODO: 每次更新只改这里的日期，比如 2025-11-22 -->
+          今日：2025-11-21
+        </div>
+        <!-- 一键跳转到 GitHub 编辑页的按钮 -->
+        <a class="update-btn" href="https://github.com/1039574482-del/pplx-intel/edit/main/index.html" target="_blank">
+          更新今日情报
+        </a>
       </div>
     </header>
 
@@ -206,6 +233,7 @@
       <span class="dot"></span> 今日必跑热点 TOP 3
     </h2>
 
+    <!-- HOT_TOP3_START -->
     <div class="card">
       <div class="card-header">
         <div class="card-title">① 雁滩万达商圈</div>
@@ -277,12 +305,14 @@
         <div class="chip">打车刚需</div>
       </div>
     </div>
+    <!-- HOT_TOP3_END -->
 
     <!-- 城市事件雷达 -->
     <h2 class="section-title">
       <span class="dot"></span> 城市事件雷达
     </h2>
 
+    <!-- HOT_EVENTS_START -->
     <div class="card">
       <div class="card-header">
         <div class="card-title">演唱会 / 音乐会</div>
@@ -354,12 +384,14 @@
         <div class="card-row-value">活动开始前 1 小时与结束后 1 小时，是接【场馆↔商圈】的黄金时间。</div>
       </div>
     </div>
+    <!-- HOT_EVENTS_END -->
 
     <!-- 机场 / 高铁 & 天气 -->
     <h2 class="section-title">
       <span class="dot"></span> 机场 · 高铁 · 天气雷达
     </h2>
 
+    <!-- HOT_AIR_WEATHER_START -->
     <div class="card">
       <div class="card-header">
         <div class="card-title">中川机场 / 高铁到港高峰</div>
@@ -389,12 +421,14 @@
         <div class="card-row-value">★★★☆☆ / ★★★★★（恶劣天气优先守地铁口、商场门口、学校门口）。</div>
       </div>
     </div>
+    <!-- HOT_AIR_WEATHER_END -->
 
     <!-- 今日路线 & 止损 -->
     <h2 class="section-title">
       <span class="dot"></span> 今日路线 · 止损提示
     </h2>
 
+    <!-- HOT_ROUTES_START -->
     <div class="card">
       <div class="card-header">
         <div class="card-title">推荐路线</div>
@@ -424,6 +458,7 @@
         <div class="card-row-value">龚家湾 / 榆中 / 西固深处：非必要不久留。跑完单立即往主城区移动。</div>
       </div>
     </div>
+    <!-- HOT_ROUTES_END -->
 
   </div>
 
